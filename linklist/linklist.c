@@ -23,8 +23,11 @@ int main()
       rvalue=linsert(&head,value);
       break;
     case 2:
-      
-
+      lview(struct node*head);
+      break;
+    case 3:
+      break;
+    
 
     }
   }
@@ -51,7 +54,15 @@ int linsert(struct node**head,int value)
 	}
       temp->next=new1;
     }
-  
-
-
+}
+int lview(struct node*head)
+{
+  struct node*temp;
+  temp=head;
+  while(temp!=NULL)
+    {
+      printf("%d",temp->number);
+    }
+  temp=temp->next;
+  return 0;
 }
