@@ -15,7 +15,7 @@ int main()
   head=(struct node*)malloc(sizeof(struct node));
   head=NULL;
   for(;;){
-  printf("(1)to insert\n(2)to view\n(3)to delete(4)to exit\n enter your choice");
+  printf("(1)to insert\n(2)to view\n(3)to delete\n(4)to exit\n enter your choice");
   scanf("%d",&choice);
   switch(choice)
     {
@@ -28,6 +28,9 @@ int main()
       lview(head);
       break;
     case 3:
+      printf("enter the element to delete");
+      scanf("%d",&value);
+      ldelete(head,value);
       break;
     case 4:
       exit(0);
@@ -69,5 +72,20 @@ int lview(struct node *head)
       printf("%d",temp->number); 
       temp=temp->next;
     }
-  return 0;
+  return 0;}
+
+int ldelete(struct node* head,int value){
+  struct node*new1;
+  struct node*temp1;
+  new1=head;
+  temp1=new1->next;
+  while(temp1->value!=value||temp1->next!=NULL)
+    {
+      new1=new1->next;
+      temp1=temp1->next;
+      
+
+    }
+  
+
 }
